@@ -1,5 +1,8 @@
 %\documentclass[conference]{IEEETran}
 \documentclass{article}
+% Packages to draw tables
+\usepackage{booktabs} % for \toprule, \midrule and \bottomrule (improved \hline)
+\usepackage{multirow}
 
 \begin{document}
 \title{This is a Personal \LaTeXe{} Template}
@@ -16,6 +19,30 @@ This is the method.
 \section{Experiment}
 \label{sec:exp}
 This is the experiment.
+
+\subsection{Table}
+\begin{table}[h] % table position: here
+  \centering     % center of the page
+  \caption[table1]{This is a table}
+  \label{tab:table1}
+
+  \begin{tabular}{rlcr} % four columns aligned as right, left, center and right
+    \toprule
+    \multirow{2}{*}{No.} & First  & Second & Third  \\
+                         & Column & Column & Column \\
+    \midrule
+
+    1 & one & two & three \\
+
+    \midrule
+    \multicolumn{3}{l}{Colors} \\
+    \midrule
+
+    2 & red & blue & green                     \\
+    3 & red & \multicolumn{2}{c}{multi-colors} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 \section{Result}
 \label{sec:result}
