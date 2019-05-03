@@ -3,6 +3,8 @@
 % Packages to draw tables
 \usepackage{booktabs} % for \toprule, \midrule and \bottomrule (improved \hline)
 \usepackage{multirow}
+% Packages to generate figures
+\usepackage{graphicx}
 
 \begin{document}
 \title{This is a Personal \LaTeXe{} Template}
@@ -13,7 +15,7 @@
 This is an introduction. It references the work~\cite{shannon2001mathematical}.
 
 \section{Method}
-\label{sec:exp}
+\label{sec:method}
 This is the method.
 
 \section{Experiment}
@@ -23,8 +25,8 @@ This is the experiment.
 \subsection{Table}
 \begin{table}[h] % table position: here
   \centering     % center of the page
-  \caption[table1]{This is a table}
-  \label{tab:table1}
+  \caption[table1]{A table of numbers and colors}
+  \label{tab:color_num_table}
 
   \begin{tabular}{rlcr} % four columns aligned as right, left, center and right
     \toprule
@@ -44,12 +46,21 @@ This is the experiment.
   \end{tabular}
 \end{table}
 
-\section{Result}
+\subsection{Figure}
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.4]{fig/fig1.png}
+  \caption{Dose responses from different samples}
+  \label{fig:dose_response}
+\end{figure}
+
+\section{Discussion}
 \label{sec:result}
-This is the result from Section~\ref{sec:exp}
+This is the discussion from Section~\ref{sec:exp}
 
 % \bibliographystyle{IEEETran}
 \bibliographystyle{abbrv}
 \bibliography{ref}
+
 
 \end{document}
