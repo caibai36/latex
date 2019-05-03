@@ -1,10 +1,11 @@
-%\documentclass[conference]{IEEETran}
 \documentclass{article}
+%\documentclass[conference]{IEEETran}
 % Packages to draw tables
 \usepackage{booktabs} % for \toprule, \midrule and \bottomrule (improved \hline)
 \usepackage{multirow}
 % Packages to generate figures
 \usepackage{graphicx}
+\usepackage{subcaption} % for \subfigure
 
 \begin{document}
 \title{This is a Personal \LaTeXe{} Template}
@@ -49,17 +50,56 @@ This is the experiment.
 \subsection{Figure}
 \begin{figure}
   \centering
-  \includegraphics[scale=0.4]{fig/fig1.png}
+  \includegraphics[scale=0.5]{fig/fig1.png}
+  % \includegraphics[width=5cm]{fig/fig1.png}
+  % \includegraphics[hight=5cm]{fig/fig1.png}
+  % \includegraphics[width=5cm, hight=5cm]{fig/fig1.png}
+  % \includegraphics[scale=0.5, angle=270]{fig/fig1.png}
   \caption{Dose responses from different samples}
   \label{fig:dose_response}
+\end{figure}
+
+\begin{figure}
+  \centering
+
+  \begin{subfigure}{0.6\textwidth}  % make subfigure bigger
+    \centering
+    \includegraphics[width=0.8\linewidth]{fig/fig3.png} % change the ratio
+    \caption{1a}
+    \label{fig:comb_1a}
+  \end{subfigure}  % the following line with line break (without sign %}
+
+  \begin{subfigure}{0.3\textwidth}
+    \centering
+    \includegraphics[width=1.0\linewidth]{fig/fig1.png}
+    \caption{1b}
+    \label{fig:comb_1b}
+  \end{subfigure}
+  %
+  \begin{subfigure}{0.3\textwidth}
+    \centering
+    \includegraphics[width=1.0\linewidth]{fig/fig2.png}
+    \caption{1c}
+    \label{fig:comb_1c}
+  \end{subfigure}
+  %
+  \begin{subfigure}{0.5\textwidth} % 0.3 + 0.3 + 0.5 > 1; floating to next line
+    \centering
+    \includegraphics[width=1.0\linewidth]{fig/fig3.png}
+    \caption{1d}
+    \label{fig:comb_1d}
+  \end{subfigure}
+  %
+  \caption{The combined figure}
+  \label{fig:comb_fig}
 \end{figure}
 
 \section{Discussion}
 \label{sec:result}
 This is the discussion from Section~\ref{sec:exp}
 
-% \bibliographystyle{IEEETran}
 \bibliographystyle{abbrv}
+% \bibliographystyle{IEEETran}
 \bibliography{ref}
 
 
